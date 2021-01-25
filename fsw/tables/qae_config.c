@@ -15,7 +15,7 @@
 /*
 ** Local Structure Declarations
 */
-static CFE_TBL_FileDef_t CFE_TBL_FileDef =
+static OS_USED CFE_TBL_FileDef_t CFE_TBL_FileDef =
 {
     /* Content format: ObjName[64], TblName[38], Desc[32], TgtFileName[20], ObjSize
     **    ObjName - variable name of config table, e.g., CI_ConfigDefTbl[]
@@ -42,7 +42,48 @@ static CFE_TBL_FileDef_t CFE_TBL_FileDef =
 /* Default QAE config table data */
 QAE_ConfigTbl_t QAE_ConfigTbl =
 {
-	/* TODO:  Define table. */
+    /** \brief Complimentary filter accelerometer weight.
+     *
+     *  \par Limits:
+     *       Min > Max (incr.) 0 > 1, default 0.2.
+     */
+    0.2f,
+    /** \brief Complimentary filter magnetometer weight.
+     *
+     *  \par Limits:
+     *       Min > Max (incr.) 0 > 1, default 0.1.
+     */
+    0.1f,
+    /** \brief Complimentary filter gyroscope bias weight.
+     *
+     *  \par Limits:
+     *       Min > Max (incr.) 0 > 1, default 0.1.
+     */
+    0.1f,
+    /** \brief Magnetic declination, in degrees.
+     *
+     *  \par Limits:
+     *       Min > Max (incr.) 0 > 180, default 0.0.
+     */
+    0.0f,
+    /** \brief Automatic GPS based declination compensation.
+     *
+     *  \par Limits:
+     *       TRUE or FALSE, default 1 (TRUE).
+     */
+    1,
+    /** \brief Acceleration compensation based on GPS velocity.
+     *
+     *  \par Limits:
+     *       TRUE or FALSE, default 1 (TRUE).
+     */
+    1,
+    /** \brief Gyro bias limit in rad/s.
+     *
+     *  \par Limits:
+     *       Min > Max (incr.) 0 > 2, default 0.05.
+     */
+    0.05f
 };
 
 /*
