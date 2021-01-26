@@ -1,5 +1,5 @@
 
-add_airliner_app_def(qae
+buildliner_add_app_def(qae
     FILE QAE
     SOURCES
         ${CMAKE_CURRENT_SOURCE_DIR}/../src/qae_app.cpp
@@ -21,7 +21,7 @@ add_airliner_app_def(qae
         ${PROJECT_SOURCE_DIR}/apps/qae/fsw/platform_inc
 )
 
-add_airliner_app_unit_test(qae-ut
+buildliner_add_app_unit_test(qae-ut
     UTASSERT
     NO_HELGRIND
     NO_MASSIF
